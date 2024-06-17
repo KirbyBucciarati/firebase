@@ -1,0 +1,51 @@
+#:include c.kv
+
+ScreenManager:
+    Login:
+    Cadastro
+
+<Cadastro>:
+    name: 'Cadastro'
+
+<Login>:
+    name: 'login'
+
+    FloatLayout:
+
+        AsyncImage:
+            source: "https://cdn-icons-png.flaticon.com/512/40/40279.png"
+            pos_hint: {'center_x':0.5, 'center_y':0.8}
+            size_hint: 0.2, 0.2
+
+        TextInput:
+            hint_text: 'E-mail'
+            pos_hint: {'center_x':0.5, 'center_y':0.6}
+            size_hint: 0.5, 0.05
+            id: email
+
+        TextInput:
+            hint_text: 'Senha'
+            pos_hint: {'center_x':0.5, 'center_y':0.525}
+            size_hint: 0.5, 0.05
+            id: senha
+
+        Button:
+            text: 'Enviar'
+            pos_hint: {'center_x':0.5, 'center_y':0.45}
+            size_hint: 0.1, 0.05
+            background_normal: ''
+            background_color: (0.4522, 0, 0.5478, 1)
+            on_release: app.Logar()
+        
+        Button:
+            text: 'Cadastrar'
+            pos_hint: {'center_x':0.5, 'center_y':0.2}
+            size_hint: 0.2, 0.05
+            on_release: app.root.current = 'Cadastro'
+
+        Label:
+            text: 'teste'
+            pos_hint: {'center_x':0.5, 'center_y':0.35}
+            color: (0,0,0,0)
+            font_size: 30
+            id: sts
